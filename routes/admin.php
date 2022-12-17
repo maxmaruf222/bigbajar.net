@@ -1,8 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\AdminAuthController;
-use Illuminate\Routing\Route as RoutingRoute;
+
 
 Route::prefix('admin')->group(function(){
     Route::get('/', App\Http\Livewire\Admin\Dashboard::class)->name('admin.dashboard');
@@ -17,8 +16,8 @@ Route::prefix('admin')->group(function(){
     
 });
 
-// Route::get('admin/login', function(){ return view('admin.login');})->name('admin.login');
-// Route::get('admin/register', function(){ return view('admin.register');})->name('admin.register');
+Route::get('admin/login', function(){ return view('admin.login');})->name('admin.login');
+Route::get('admin/register', function(){ return view('admin.register');})->name('admin.register');
 
 
 
