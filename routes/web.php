@@ -17,21 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::fallback(Fallback::class);
 
 
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified'
-])->group(function () {
-    
-});
 
-Route::get('/', function () { return view('public.welcome'); })->name('dashboard');
-
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
- })->name('dashboard');
- 
- require 'admin.php';
 
 
 
